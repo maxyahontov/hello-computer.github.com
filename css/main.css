@@ -142,6 +142,8 @@ body{
 .b_midslide{
 	position:relative;
 	height:535px;	
+	background: url(../images/map.jpg);
+	z-index: 0;
 	}
 	
 	/* Тени */
@@ -157,7 +159,7 @@ body{
 		margin-left:-170px;
 		}
 		.b_midslide_fon {
-			margin-left:472px;
+			margin-left:472px;			
 		}
 		.b_midslide_box__wrap {
 			position:relative;

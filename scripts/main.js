@@ -35,4 +35,37 @@ $(function(){
 		$('html, body').stop().animate({ scrollTop: 0 }, 1000);
 		return false;
 	});	
+
+	/* Шэринг
+
+	*/
+
+	var share = function(type) {
+        var site_url = encodeURI('http://banana-ecuador.ru'),
+            title = encodeURI('Я хочу в Эквадорр! '),
+            image = site_url + '/images/social.jpg',
+            description = encodeURI('Поехали со мной в банановый рай! Ешь бананы, участвуй в акции,  выиграй путешествие! Клик-клик!'),
+            url;
+
+            console.log(image);
+
+        if(type == '#vk') {
+            url = 'http://vk.com/share.php?' + 'url=' + site_url + '&title=' + title + '&description=' + description + '&image=' + image;
+        }
+        else if(type == '#fb') {
+            url = 'http://www.facebook.com/sharer.php?s=100&p[title]=' + title + '&p[summary]=' + description + '&p[url]=' + site_url + '&p[images][0]=' + image;
+        }
+        else if(type == '#ok') {
+            url = 'http://odnoklassniki.ru/dk?st.cmd=addShare&' + '&st._surl=' + site_url;
+        }
+        else if(type == '#ml') {
+            url = 'http://connect.mail.ru/share?' + 'url=' + site_url + '&title=' + title + '&description=' + description + '&imageurl=' + image;
+        }
+
+        window.open(url,'displayWindow', 'width=700,height=600,left=200,top=100,location=no, directories=no,status=no,toolbar=no,menubar=no');
+    }
+
+    $('.b_topslide_meet__socnet a').click(function(){
+    	share($(this).attr('href'));
+    }); 
 });

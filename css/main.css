@@ -1,0 +1,298 @@
+@import 'reset.css';
+@import '../fonts/PFAgoraSlabPro/PFAgoraSlabPro.css';
+
+body{
+	position:relative;
+	overflow-x:hidden;
+	background:url(../images/botslide_fon.jpg) repeat-x 50% 100% #6dcff6;
+	color:#fff;
+	font: 18px/24px 'pf_agora_slab_proitalic', sans-serif;
+}
+
+/* Путь по сайту
+
+*/
+.b_global_way {
+	position:absolute;top:0;left:50%;z-index:200;
+	width:843px;height:2321px;
+	margin-left:-420px;
+}
+
+/* Верхний слайд
+
+*/
+.b_topslide{}
+	.b_topslide_wrap{
+		position:relative;
+		width:1280px;height:1002px;
+		margin:0 auto;
+	}
+	.b_topslide_wrap > div{text-align:center;line-height:21px;}
+	.b_topslide_wrap_fon{
+		position:relative;left:-150px;
+	}
+	
+	.b_topslide_logo{
+		position:absolute;top:30px;left:48px;
+		width:117px;
+		font: 18px 'pf_agora_slab_problack_italic', sans-serif;
+		color:#fff;text-align:center;line-height:21px;
+		text-decoration:none;
+		}
+		.b_topslide_logo p{margin-top:12px;}
+		
+	.b_topslide_click{
+		position:absolute;top:116px;left:308px;
+		width:145px;height:200px;
+		background:url(../images/topslide_click_fon.png) no-repeat 100% 100%;
+	}
+	
+	#topslide_click_point{
+		position:absolute;left:460px;top:215px;z-index:50;
+		width:193px;height:340px;
+	}
+	
+	.b_topslide_talk{
+		position:absolute;top:30px;right:367px;
+		width:280px;height:280px;overflow:hidden;
+		background:url(../images/topslide_talk_fon.png);
+		color:#2bb4fb;font-size:24px;line-height:30px !important;
+		}
+		.b_topslide_talk p{display:none;width:200px;margin:30px auto 50px;}
+		.b_topslide_talk p.active{display:block;}
+	
+	.b_topslide_meet{
+		position:absolute;top: 34px;right: 49px;z-index:50;
+		width:223px;height:225px;
+		}
+		.b_topslide_meet p{margin-top:20px;}
+		.b_topslide_meet__like{font-family:'pf_agora_slab_problack_italic', sans-serif;}
+	
+		.b_topslide_meet__socnet{
+			width:120px;height:34px;overflow:hidden;
+			background:url(../images/topslide_meet_socnet.png) no-repeat 0 0;
+			margin:12px auto 0;
+		}
+		.b_topslide_meet__socnet a{
+			float:left;
+			width:34px;height:34px;
+			margin-right:9px;
+		}
+		.b_topslide_meet__socnet a:last-child{margin-right:0;}
+
+	.b_topslide_name{
+		position:absolute;top:611px;right:45px;
+		font: 90px/34px 'pf_agora_slab_proultraBlkIt', sans-serif !important;
+		text-align:left !important;
+		}
+		.b_topslide_name span{font: 36px/34px 'pf_agora_slab_problack_italic', sans-serif;}
+/* /Верхний слайд */
+
+/* Средний слайд
+
+*/
+.b_midslide{
+	position:relative;
+	height:535px;	
+	}
+	
+	/* Тени */
+	.b_midslide_shdw_top,
+	.b_midslide_shdw_bot{position:absolute;width:100%;height:11px;}
+	
+	.b_midslide_shdw_top{top:0;background:url(../images/midslide_shdw_top.png) repeat-x 0 0;}
+	.b_midslide_shdw_bot{bottom:0;background:url(../images/midslide_shdw_bot.png) repeat-x 0 0;}
+	
+	.b_midslide_box{
+		position:absolute;top:0;left:50%;
+		width:979px;height:535px;
+		margin-left:-170px;
+		}
+		.b_midslide_fon {
+			margin-left:472px;
+		}
+		.b_midslide_box__wrap {
+			position:relative;
+			margin:1050px 0 0 270px;
+			text-align:left !important;
+			}
+			/* В Москве */
+			.b_midslide_box__msk{
+				position:relative;z-index:50;
+				padding-top:80px;
+				font: 36px/26px 'pf_agora_slab_problack_italic', sans-serif;
+				}
+				.b_midslide_box__msk img{position:absolute;top:98px;left:-88px;}
+				.b_midslide_box__msk_tit{font: 90px/90px 'pf_agora_slab_proultraBlkIt', sans-serif;}
+			
+			/* Перекресток */
+			.b_midslide_box__cross{
+				position:relative;z-index:50;
+				margin:30px 0 25px 0;
+				}
+				.b_midslide_box__cross img{
+					position:relative;left:-65px;
+					margin-bottom:15px;
+				}
+			/* Правила */
+			.b_midslide_box__btn{
+				position:relative;left:-15px;z-index:50;
+				background:#6dcff6;
+				margin-top:20px;
+				padding:5px 15px;
+				font: 18px/24px 'pf_agora_slab_problack_italic', sans-serif;
+				color:#fff;text-decoration:none;
+				-webkit-border-radius: 20px;
+				-moz-border-radius: 20px;
+				border-radius: 20px;
+			}
+/* /Средний слайд */
+
+/* Нижний слайд
+
+*/
+.b_botslide {position:relative;}
+	.b_botslide_stand {
+		position:relative;
+		width:1280px;min-height:935px;
+		margin:0 auto;
+		}
+		.b_botslide_stand_fon{position:relative;left:-150px;}
+		.b_botslide_stand__about{
+			position:absolute;top:152px;left:150px;
+			font: 36px/36px 'pf_agora_slab_problack_italic', sans-serif;
+			}
+			.b_botslide_stand__about_tit{
+				margin-bottom:10px;
+				font: 90px/55px 'pf_agora_slab_proultraBlkIt', sans-serif;
+			}
+			.b_botslide_stand__about_desc{margin-top:10px;font: 24px/30px 'pf_agora_slab_proitalic', sans-serif;}
+		
+		.b_botslide_stand__month{
+			position:absolute;top:565px;left:408px;
+			font: 30px/30px 'pf_agora_slab_proultraBlkIt', sans-serif;
+		}
+		
+		.b_botslide_stand__story{
+			position:absolute;top:55px;right:5px;
+			color:#0072bc;
+		}
+		.b_botslide_stand__story p{
+			margin:-80px 0 0 0px;
+			text-align: center;
+		}
+		
+	.b_botslide_games{
+		position:relative;
+		width:1100px;
+		margin:-450px auto 0;
+		}
+		.b_botslide_games__tit {
+			text-align:center;
+			font: 36px/36px 'pf_agora_slab_proultraBlkIt', sans-serif;
+		}
+		.b_botslide_games__box{display:table;margin-top:20px;}
+		.b_botslide_games__item{
+			position:relative;
+			display:block;float:left;
+			width:240px;
+			margin-left:40px;
+			padding-top:75px;
+			color:#fff;text-align:center;
+			text-decoration:none;
+			}
+			.b_botslide_games__item:first-child{margin-left:0;}
+				
+				.b_botslide_games__item img{position:absolute;top:0;}
+				.item_img1{left:93px;}
+				.item_img2{left:106px;}
+				.item_img3{left:90px;top:8px !important;}
+				.item_img4{left:83px;top:5px !important;}
+				
+				.b_botslide_games__item_tit{
+					display:block;margin-bottom:10px;
+					font: 18px/24px 'pf_agora_slab_proultraBlkIt', sans-serif;
+				}
+	
+	.b_botslide_video{
+		position:relative;
+		width:1280px;
+		margin:0 auto;
+		}
+		
+		.b_botslide_video__tit{
+			position:relative;top:65px;z-index:10;
+			text-align:center;
+			font: 90px/55px 'pf_agora_slab_proultraBlkIt', sans-serif;
+		}
+		
+		.b_botslide_video__box{
+			position:relative;
+			width:1064px;height:544px;overflow:hidden;
+			margin:0 auto;
+			}
+			.b_botslide_video__box_fon_left,
+			.b_botslide_video__box_fon_right{
+				position:absolute;top:0;z-index:10;
+				width:267px;height:544px;
+			}
+			.b_botslide_video__box_fon_left{left:0;background:url(../images/botslide_video__box_fon_left.png);}
+			.b_botslide_video__box_fon_right{right:0;background:url(../images/botslide_video__box_fon_right.png);}
+			
+			.click_me{}
+						
+		.b_botslide_video__tabs{
+			position:relative;z-index:30;
+			display:table;margin:8px 0 0 570px;
+			}
+			.b_botslide_video__tabs a{
+				display:block;float:left;
+				margin-left:40px;
+				padding-top:16px;
+				color:#00aeef;text-align:center;
+				text-decoration:none;
+			}
+			.b_botslide_video__tabs a.selected{border-top:6px solid #00aeef;padding-top:10px;}
+			.b_botslide_video__tabs a:first-child{margin-left:0;}
+			
+			.video__tabs1{width:85px;}
+			.video__tabs2{width:145px;}
+		
+		.b_botslide_video__togo {
+			position:relative;left:-262px;z-index:20;
+			width:636px;height:812px;
+			margin-top:-480px;
+			}
+			.b_botslide_video__togo img{position:relative;top:180px;left:370px;}
+			
+			.b_botslide_video__togo_text {
+				position:absolute;top:0;
+				width:299px;height:258px;
+				background:url(../images/botslide_talk_fon.png);	
+				margin-left:260px;
+				padding-top:40px;
+				color:#2bb4fb;font-size:24px;
+				line-height:30px;
+				text-align:center;
+			}
+			.b_botslide_video__togo_metro {
+				margin-top:15px;
+				font: 24px/30px 'pf_agora_slab_problack_italic', sans-serif;
+			}
+		
+		.b_botslide_video__goup,		
+		.b_botslide_video__socnet,
+		.b_botslide_video__cpr{position:absolute;right:110px;}
+		
+		.b_botslide_video__goup{bottom:115px;}
+			.b_botslide_video__goup a{
+				color:#00aeef;
+				text-decoration:none;
+			}
+		
+		.b_botslide_video__socnet{bottom:65px;}
+		.b_botslide_video__socnet .b_topslide_meet__socnet{background:url(../images/botslide_meet_socnet.png) no-repeat 0 0;}
+		
+		.b_botslide_video__cpr{bottom:25px;color:#00aeef;}
+		
+/* /Нижний слайд */

@@ -56,9 +56,11 @@ body{
 		position:absolute;top:30px;right:367px;
 		width:280px;height:280px;overflow:hidden;
 		background:url(../images/topslide_talk_fon.png);
-		color:#2bb4fb;font-size:24px;line-height:30px !important;
+		color:#2bb4fb;font-size:26px;line-height:30px !important;
 		}
 		.b_topslide_talk p{display:none;width:200px;margin:30px auto 50px;}
+		.b_topslide_talk p.l{font-size:32px;line-height:40px !important;}
+		.b_topslide_talk p.s{font-size:22px;line-height:24px !important;}	
 		.b_topslide_talk p.active{display:block;}
 	
 	.b_topslide_meet{

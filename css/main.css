@@ -9,6 +9,52 @@ body{
 	font: 18px/24px 'pf_agora_slab_proitalic', sans-serif;
 }
 
+
+/* Параллакс бананы
+
+*/
+.b_prlx_bg {position:relative;}
+
+.b_bnn1,
+.b_bnn2,
+.b_bnn3,
+.b_bnn4,
+.b_bnn5,
+.b_bnn6,
+.b_bnn7,
+.b_bnn8,
+.b_bnn9,
+.b_bnn10,
+.b_bnn11,
+.b_bnn12,
+.b_bnn13,
+.b_bnn14,
+.b_bnn15,
+.b_bnn16{position:fixed;z-index:1020;}
+
+.b_bnn1{top:0px;left:560px;}
+.b_bnn2{top:0px;left:1090px;}
+
+.b_bnn16{top:260px;left:995px;}
+.b_bnn4{top:540px;left:125px;}
+.b_bnn5{top:608px;left:1110px;}
+.b_bnn6{top:400px;left:1020px;}
+.b_bnn7{top:920px;left:450px;}
+
+.b_bnn8{top:1800px;left:1215px;z-index:1030;}
+.b_bnn9{top:1600px;left:445px;}
+
+.b_bnn10{top:2150px;left:440px;}
+.b_bnn11{top:3100px;left:1000px;}
+
+.b_bnn12{top:4200px;left:335px;}
+
+.b_bnn13{top:3200px;left:1115px;}
+
+.b_bnn14{top:5100px;left:1120px;}
+.b_bnn15{top:3900px;left:150px;}
+.b_bnn3{top:5300px;left:660px;}
+
 /* Путь по сайту
 
 */

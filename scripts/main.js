@@ -63,7 +63,7 @@ $(function(){
 
 		function init(){     
 			myMap = new ymaps.Map ("b_midslide_box__map", {
-				center: [55.781575, 37.774257],
+				center: [55.781575, 37.994257],
 				zoom: 10,
 			});
 
@@ -141,8 +141,6 @@ $(function(){
             description = encodeURI('Поехали со мной в банановый рай! Ешь бананы, участвуй в акции,  выиграй путешествие! Клик-клик!'),
             url;
 
-            console.log(image);
-
         if(type == '#vk') {
             url = 'http://vk.com/share.php?' + 'url=' + site_url + '&title=' + title + '&description=' + description + '&image=' + image;
         }
@@ -156,8 +154,20 @@ $(function(){
             url = 'http://connect.mail.ru/share?' + 'url=' + site_url + '&title=' + title + '&description=' + description + '&imageurl=' + image;
         }
 
-        window.open(url,'displayWindow', 'width=700,height=600,left=200,top=100,location=no, directories=no,status=no,toolbar=no,menubar=no');
+        var shareWindow = window.open(url,'displayWindow', 'width=700,height=600,left=200,top=100,location=no, directories=no,status=no,toolbar=no,menubar=no');
+        var timer = setInterval(checkChild, 500);
+
+        function checkChild() {
+		    if (shareWindow.closed) {
+		        $('#olusha')[0].play();
+		        clearInterval(timer);
+		    }
+		}
     }
+
+    $('#olusha')[0].addEventListener('ended',function(){
+    	alert('ss');
+    });
 
     $('.b_topslide_meet__socnet a').click(function(){
     	share($(this).attr('href'));

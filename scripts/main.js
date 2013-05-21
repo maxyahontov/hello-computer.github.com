@@ -166,7 +166,6 @@ $(function(){
     }
 
     $('#olusha')[0].addEventListener('ended',function(){
-    	alert('ss');
     });
 
     $('.b_topslide_meet__socnet a').click(function(){

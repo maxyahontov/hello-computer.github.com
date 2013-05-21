@@ -36,6 +36,133 @@
 			
 		});
 	</script>
+ <script type="text/javascript">
+/*
+ymaps.ready(init_519b0b0468fd1);
+function init_519b0b0468fd1 () { 
+		var myMap = new ymaps.Map("ymaps-519b0b0468f96", {center: [92.92009529877012,56.07557661943772],zoom: 13,type: "yandex#map"});
+myMap.controls.add('zoomControl').add('typeSelector');
+
+myMap.geoObjects.add(new ymaps.Placemark([92.90376605291675,56.06096782336999], 
+				{ iconContent: 'Арм-Строй',hintContent: '',balloonContent: '<div class=\"ballon_item\">  <p>г. Красноряск </br>пер. Светлогорский, 20, стр. 4, офис 309</p>  <p>Тел./факс: +7 (391) 253-25-30</p>  <p>  <a href=\"mailto:ooo_armstroy@bk.ru\">ooo_armstroy@bk.ru</a></p>  </div>' }, 
+		 		{ preset: 'twirl#lightblueStretchyIcon' }
+				));
+myMap.geoObjects.add(new ymaps.Placemark([92.97586039470356, 56.07818419765611], { iconContent: 'Арм Строй',hintContent: '', balloonContent: '    <div class="ballon_item">  <p>г. Красноряск </br>ул. Технологическая, 15, база</p>  <p>Тел./факс: +7 (391) 253-25-30</p>  <p><a href="mailto:ooo_armstroy@bk.ru">ooo_armstroy@bk.ru</a></p>  </div>    ' },   {   preset: 'twirl#blueStretchyIcon'} ));
+};
+*/
+  </script>
+  <script src="http://api-maps.yandex.ru/2.0-stable/?load=package.standard&lang=ru-RU" type="text/javascript"></script>
+	<script type="text/javascript">
+	  ymaps.ready(init);
+		var myMap,
+			myPlacemark;
+
+		function init(){     
+			myMap = new ymaps.Map ("b_midslide_box__map", {
+				center: [55.755773, 37.617761],
+				zoom: 10,
+			});
+
+			myPlacemark1 = new ymaps.Placemark([55.655935, 37.541494], {
+                    balloonContent: 'М.Калужская, Профсоюзная 61А (ТЦ «Калужский»)'
+                }, {
+                    iconImageHref: 'images/yamap_ico.jpg', // картинка иконки
+                    iconImageSize: [44, 63], // размеры картинки
+                });
+
+			myMap.geoObjects.add(myPlacemark1);
+			
+			myPlacemark2 = new ymaps.Placemark([55.863858, 37.545752], {
+                    balloonContent: 'М. Петровско-Разумовская, Дмитровское шоссе, 89 (ТЦ XL)'
+                }, {
+                    iconImageHref: 'images/yamap_ico.jpg', // картинка иконки
+                    iconImageSize: [44, 63], // размеры картинки
+                });
+
+			myMap.geoObjects.add(myPlacemark2);
+			
+			myPlacemark3 = new ymaps.Placemark([55.808128, 37.510709], {
+                    balloonContent: 'М.Сокол, Ленинградский просп., 80, стр. 17'
+                }, {
+                    iconImageHref: 'images/yamap_ico.jpg', // картинка иконки
+                    iconImageSize: [44, 63], // размеры картинки
+                });
+
+			myMap.geoObjects.add(myPlacemark3);
+		}
+	</script>
+  <script type="text/javascript">
+  /*
+	var map = new YMaps.Map(document.getElementById("b_midslide_box__map")); // создаем объект карты в элементе с айди 'test-map'
+	map.setCenter(new YMaps.GeoPoint(37.64, 55.76), 12); // центр карты (широта, долгота) и текущий уровень увеличения
+	
+	// кнопки и шкала масштаба располагаем как хотим
+	map.addControl(new YMaps.Zoom(), 
+		new YMaps.ControlPosition(
+			YMaps.ControlPosition.TOP_LEFT, // в какой угол поставить
+			new YMaps.Size (5, 5) // сколько от него отступ в пикселах (x, y)
+		)
+	);
+	
+	// Включаем масштабирование скроллингом мыши
+	map.enableScrollZoom();
+	
+	// миникарта
+	map.addControl(new YMaps.MiniMap(),
+		new YMaps.ControlPosition(
+			YMaps.ControlPosition.BOTTOM_RIGHT,
+			new YMaps.Size (5, 5)
+		)
+	);
+	
+	// выбор типа карты
+	map.addControl(new YMaps.TypeControl());
+	
+	// линейка с расстоянием
+	map.addControl(new YMaps.ScaleLine(),
+		new YMaps.ControlPosition(
+			YMaps.ControlPosition.BOTTOM_LEFT,
+			new YMaps.Size (5, 20)
+		)
+	);
+	
+	// Тулбар
+	map.addControl(new YMaps.ToolBar(),
+		new YMaps.ControlPosition(
+			YMaps.ControlPosition.TOP_LEFT,
+			new YMaps.Size (250, 5)
+		)
+	);
+	
+	// Добавляем стандартную метки в указанные координаты
+	// Создает метку в центре Москвы
+	var coords = new YMaps.GeoPoint(37.609218,55.753559),
+	    placemark = new YMaps.Placemark(coords);
+	placemark.name = "Имя метки";
+	placemark.description = "Описание метки";
+	map.addOverlay(placemark);
+	
+	// Добавляем метку в координаты, полученные по указанному адресу
+	var geocoder = new YMaps.Geocoder("Россия, Москва, ул. Тверская, д. 43"); 
+	YMaps.Events.observe(geocoder, geocoder.Events.Load, function (geocoder) {
+	    var geoCoords = geocoder.get(0).getGeoPoint(),
+	        geoPlacemark = new YMaps.Placemark(geoCoords);
+		map.addOverlay(geoPlacemark); 
+	});
+	
+	// Создаем собственную метку
+	var s = new YMaps.Style(); // Создаем стиль	
+	s.iconStyle = new YMaps.IconStyle(); // Создает стиль значка метки
+	s.iconStyle.href = "target.png"; // Указываем путь к картинке
+	s.iconStyle.size = new YMaps.Point(16, 16); // Размеры картинки
+	s.iconStyle.offset = new YMaps.Point(-8, -8); // Сдвиг
+	var ownPlacemark = new YMaps.Placemark(coords, { 
+		style: s // Указываем какой стиль применить
+	});
+	map.addOverlay(ownPlacemark);
+	*/
+</script>
+  
 </head>
 <body>
 	<div class="b_prlx_bg">
@@ -99,23 +226,25 @@
 			<img src="images/midslide_fon.png" alt="" class="b_midslide_fon" />
 			<div class="b_midslide_box">
 		
-			<div class="b_midslide_box__wrap">
-			
-				<div class="b_midslide_box__msk">
-					<img src="images/b_midslide_box__msk_star.png" alt="" />
-					<p class="b_midslide_box__msk_tit">В Москве</p>
-					<p>в магазинах</p>
+				<div class="b_midslide_box__wrap">
+					
+					<div id="b_midslide_box__map" style="width:1000px;height:533px"></div>
+					
+					<div class="b_midslide_box__msk">
+						<img src="images/b_midslide_box__msk_star.png" alt="" />
+						<p class="b_midslide_box__msk_tit">В Москве</p>
+						<p>в магазинах</p>
+					</div>
+					
+					<div class="b_midslide_box__cross">
+						<img src="images/b_midslide_box__cross_log.png" alt="" />
+						<p>Где проходит акция «Продли свое лето!»<br>Следи за передвижением интерактивных стоек,<br>наслаждайся сладкими бананами<br>и выиграй поездку в Эквадор!</p>
+					</div>			
+					<a href="#" class="b_midslide_box__btn">Узнать правила акции</a>
+					
 				</div>
-				
-				<div class="b_midslide_box__cross">
-					<img src="images/b_midslide_box__cross_log.png" alt="" />
-					<p>Где проходит акция «Продли свое лето!»<br>Следи за передвижением интерактивных стоек,<br>наслаждайся сладкими бананами<br>и выиграй поездку в Эквадор!</p>
-				</div>			
-				<a href="#" class="b_midslide_box__btn">Узнать правила акции</a>
-				
+							
 			</div>
-						
-		</div>
 		</div>
 	</div><!-- /.b_topslide -->
 	

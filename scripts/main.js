@@ -39,7 +39,6 @@ $(function(){
 	/* Шэринг
 
 	*/
-
 	var share = function(type) {
         var site_url = encodeURI('http://banana-ecuador.ru'),
             title = encodeURI('Я хочу в Эквадорр! '),
@@ -68,4 +67,22 @@ $(function(){
     $('.b_topslide_meet__socnet a').click(function(){
     	share($(this).attr('href'));
     }); 
+
+	/* Корректировка позиций бананов для больших/малых мониторов
+
+	*/
+	var win_width = $(window).width();console.log(win_width);
+		
+	if ( win_width >= 1600 ){
+		$('.b_prlx_bg img').each(function(){
+			var img_width = parseInt($(this).css('left'));//console.log(img_width);
+			$(this).css('left',img_width+200);
+		})
+	}
+	if ( win_width <= 1300 ){
+		$('.b_prlx_bg img').each(function(){
+			var img_width = parseInt($(this).css('left'));//console.log(img_width);
+			$(this).css('left',img_width-200);
+		})
+	}
 });

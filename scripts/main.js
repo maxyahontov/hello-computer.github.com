@@ -14,14 +14,99 @@ $(function(){
 	if($.browser.ipad) $("body").addClass("ipad");
 	if($.browser.ipod) $("body").addClass("ipod");
 	
+	/* Параллакс
+	
+	*/
+	$('.b_bnn10').scrollingParallax({staticSpeed : 1.1,staticScrollLimit : false});
+	$('.b_bnn13').scrollingParallax({staticSpeed : 1.1,staticScrollLimit : false});
+	$('.b_bnn16').scrollingParallax({staticSpeed : 1.1,staticScrollLimit : false});
+	$('.b_bnn1').scrollingParallax({staticSpeed : 1.1,staticScrollLimit : false});
+	$('.b_bnn2').scrollingParallax({staticSpeed : 1.1,staticScrollLimit : false});
+	$('.b_bnn15').scrollingParallax({staticSpeed : 1.1,staticScrollLimit : false});
+	$('.b_bnn7').scrollingParallax({staticSpeed : 1.1,staticScrollLimit : false});
+	$('.b_bnn9').scrollingParallax({staticSpeed : 1.1,staticScrollLimit : false});
+	$('.b_bnn6').scrollingParallax({staticSpeed : 1.1,staticScrollLimit : false});
+	
+	$('.b_bnn8').scrollingParallax({staticSpeed : 1.3,staticScrollLimit : false});
+	
+	$('.b_bnn4').scrollingParallax({staticSpeed : 1.5,staticScrollLimit : false});
+	$('.b_bnn5').scrollingParallax({staticSpeed : 1.5,staticScrollLimit : false});
+	$('.b_bnn11').scrollingParallax({staticSpeed : 1.5,staticScrollLimit : false});
+	$('.b_bnn12').scrollingParallax({staticSpeed : 1.5,staticScrollLimit : false});
+	$('.b_bnn14').scrollingParallax({staticSpeed : 1.5,staticScrollLimit : false});
+	$('.b_bnn3').scrollingParallax({staticSpeed : 1.5,staticScrollLimit : false});
+	
 	/* Клик на Гоше
 	
 	*/
+	var num = 2;
 	$('#topslide_click_point').click(function(){
-		$('.b_topslide_talk p.active').removeClass('active').fadeOut().next().fadeIn().addClass('active');
-		$('.b_topslide_talk p:last').after($('.b_topslide_talk p:first')); 
+		if( num > 0 ){
+			if( num >= 10 ){
+				num = 1;
+				$(this).attr('class','');
+			}
+			$('.b_topslide_talk p.active').removeClass('active').fadeOut().next().fadeIn().addClass('active');
+			$(this).addClass('hero_pos'+num);
+			$('.b_topslide_talk p:last').after($('.b_topslide_talk p:first')); 
+		}
+		num++;
 		return false;
 	});
+	
+	/* Карта Яндекса
+	
+	*/
+	ymaps.ready(init);
+		var myMap,
+			myPlacemark;
+
+		function init(){     
+			myMap = new ymaps.Map ("b_midslide_box__map", {
+				center: [55.781575, 37.774257],
+				zoom: 10,
+			});
+
+			myMap.controls
+                // Кнопка изменения масштаба
+                .add('zoomControl')
+                // Список типов карты
+                .add('typeSelector')
+                // Стандартный набор кнопок
+                .add('mapTools');
+
+            // Также в метод add можно передать экземпляр класса, реализующего определенный элемент управления.
+            // Например, линейка масштаба ('scaleLine')
+            myMap.controls
+                .add(new ymaps.control.ScaleLine())
+			
+			myPlacemark1 = new ymaps.Placemark([55.655935, 37.541494], {
+                    balloonContent: 'М.Калужская, Профсоюзная 61А (ТЦ «Калужский»)'
+                }, {
+                    iconImageHref: 'images/yamap_ico.png', // картинка иконки
+                    iconImageSize: [44, 63], // размеры картинки
+                });
+
+			myMap.geoObjects.add(myPlacemark1);
+			
+			myPlacemark2 = new ymaps.Placemark([55.863858, 37.545752], {
+                    balloonContent: 'М. Петровско-Разумовская, Дмитровское шоссе, 89 (ТЦ XL)'
+                }, {
+                    iconImageHref: 'images/yamap_ico.png', // картинка иконки
+                    iconImageSize: [44, 63], // размеры картинки
+                });
+
+			myMap.geoObjects.add(myPlacemark2);
+			
+			myPlacemark3 = new ymaps.Placemark([55.808128, 37.510709], {
+                    balloonContent: 'М.Сокол, Ленинградский просп., 80, стр. 17'
+                }, {
+                    iconImageHref: 'images/yamap_ico.png', // картинка иконки
+                    iconImageSize: [44, 63], // размеры картинки
+                });
+
+			myMap.geoObjects.add(myPlacemark3);
+		}
 	
 	/* Табы видео
 	
@@ -34,7 +119,17 @@ $(function(){
 	$('.b_botslide_video__goup a').click(function(){
 		$('html, body').stop().animate({ scrollTop: 0 }, 1000);
 		return false;
-	});	
+	});
+	
+	/* Всплывашка правил
+	
+	*/
+	$(".popup_window").fancybox({
+		'titleShow'		: false,
+		'transitionIn'		: 'none',
+		'transitionOut'		: 'none'
+	});
+	$(".i_wnd_about_cls").click(function(){$.fancybox.close();});
 
 	/* Шэринг
 
@@ -71,17 +166,17 @@ $(function(){
 	/* Корректировка позиций бананов для больших/малых мониторов
 
 	*/
-	var win_width = $(window).width();console.log(win_width);
+	var win_width = $(window).width();
 		
 	if ( win_width >= 1600 ){
 		$('.b_prlx_bg img').each(function(){
-			var img_width = parseInt($(this).css('left'));//console.log(img_width);
+			var img_width = parseInt($(this).css('left'));
 			$(this).css('left',img_width+200);
 		})
 	}
 	if ( win_width <= 1300 ){
 		$('.b_prlx_bg img').each(function(){
-			var img_width = parseInt($(this).css('left'));//console.log(img_width);
+			var img_width = parseInt($(this).css('left'));
 			$(this).css('left',img_width-200);
 		})
 	}

@@ -1,14 +1,14 @@
 @import 'reset.css';
+@import 'jquery.fancybox.css';
 @import '../fonts/PFAgoraSlabPro/PFAgoraSlabPro.css';
 
 body{
-	position:relative;
-	overflow-x:hidden;
+	min-width:1280px;
 	background:url(../images/botslide_fon.jpg) repeat-x 50% 100% #6dcff6;
 	color:#fff;
 	font: 18px/24px 'pf_agora_slab_proitalic', sans-serif;
 }
-
+body *{-overflow:hidden;}
 
 /* Параллакс бананы
 
@@ -64,6 +64,9 @@ body{
 	margin-left:-420px;
 }
 
+.b_main_wrap {
+	background:url(../images/hdr_fon.jpg) no-repeat 50% 0;
+}
 /* Верхний слайд
 
 */
@@ -72,11 +75,9 @@ body{
 		position:relative;
 		width:1280px;height:1002px;
 		margin:0 auto;
+		background:url(../images/topslide_fon.png) no-repeat 100px 0;
 	}
 	.b_topslide_wrap > div{text-align:center;line-height:21px;}
-	.b_topslide_wrap_fon{
-		position:relative;left:-150px;
-	}
 	
 	.b_topslide_logo{
 		position:absolute;top:30px;left:48px;
@@ -91,12 +92,23 @@ body{
 		position:absolute;top:116px;left:308px;
 		width:145px;height:200px;
 		background:url(../images/topslide_click_fon.png) no-repeat 100% 100%;
-	}
+		}
 	
 	#topslide_click_point{
-		position:absolute;left:460px;top:215px;z-index:50;
-		width:193px;height:340px;
-	}
+		position:absolute;left: 350px;top: 110px;z-index:50;
+		width:440px;height:528px;
+		}
+	.hero_pos1{background:url(../images/hero/hero_pos1.png);}
+	.hero_pos2{background:url(../images/hero/hero_pos2.png);}
+	.hero_pos3{background:url(../images/hero/hero_pos3.png);}
+	.hero_pos4{background:url(../images/hero/hero_pos4.png);}
+	.hero_pos5{background:url(../images/hero/hero_pos5.png);}
+	.hero_pos6{background:url(../images/hero/hero_pos6.png);}
+	.hero_pos7{background:url(../images/hero/hero_pos7.png);}
+	.hero_pos8{background:url(../images/hero/hero_pos8.png);}
+	.hero_pos9{background:url(../images/hero/hero_pos9.png);}
+	
+	.b_topslide_bnn{position:absolute;top:433px;left:230px;z-index:60;}
 	
 	.b_topslide_talk{
 		position:absolute;top:30px;right:367px;
@@ -129,7 +141,7 @@ body{
 		.b_topslide_meet__socnet a:last-child{margin-right:0;}
 
 	.b_topslide_name{
-		position:absolute;top:611px;right:45px;
+		position:absolute;top:611px;right:45px;z-index:60;
 		font: 90px/34px 'pf_agora_slab_proultraBlkIt', sans-serif !important;
 		text-align:left !important;
 		}
@@ -141,9 +153,8 @@ body{
 */
 .b_midslide{
 	position:relative;
-	height:535px;	
-	-background: url(../images/map.jpg);
-	z-index: 0;
+	height:455px;
+	overflow:hidden;
 	}
 	
 	/* Тени */
@@ -153,37 +164,40 @@ body{
 	.b_midslide_shdw_top{top:0;background:url(../images/midslide_shdw_top.png) repeat-x 0 0;}
 	.b_midslide_shdw_bot{bottom:0;background:url(../images/midslide_shdw_bot.png) repeat-x 0 0;}
 	
+	#b_midslide_box__map{position:absolute;top:0;z-index:10;}
+	
 	.b_midslide_box{
-		position:absolute;top:0;left:50%;
-		width:979px;height:535px;
-		margin-left:-170px;
+		position:relative;
+		
+		/* -position:absolute;top:0;left:50%;
+		-width:979px; */
+		-height:535px;
+		-margin-left:-170px;
 		}
 		.b_midslide_fon {
-			position:relative;z-index:10;
-			margin-left:472px;			
+			position:relative;left:475px;z-index:10;
+			
 		}
 		.b_midslide_box__wrap {
-			position:relative;
-			margin:1050px 0 0 270px;
-			text-align:left !important;
+			position:relative;z-index:10px;
+			width: 1280px;height:455px;
+			margin: 0 auto;
+			text-align: left !important;
 			}
-			#b_midslide_box__map{
-				position:absolute;z-index:5;
-				margin:-48px 0 0 -900px;
-			}
+
 			/* В Москве */
 			.b_midslide_box__msk{
-				position:relative;z-index:50;
-				padding-top:80px;
+				position:absolute;top:60px;z-index:50;
+				margin-left:800px;
 				font: 36px/26px 'pf_agora_slab_problack_italic', sans-serif;
 				}
-				.b_midslide_box__msk img{position:absolute;top:98px;left:-88px;}
+				.b_midslide_box__msk img{position:absolute;top:10px;left:-88px;}
 				.b_midslide_box__msk_tit{font: 90px/90px 'pf_agora_slab_proultraBlkIt', sans-serif;}
 			
 			/* Перекресток */
 			.b_midslide_box__cross{
-				position:relative;z-index:50;
-				margin:30px 0 25px 0;
+				position:absolute;top:60px;z-index:50;
+				margin:145px 0 25px 800px;
 				}
 				.b_midslide_box__cross img{
 					position:relative;left:-65px;
@@ -191,9 +205,9 @@ body{
 				}
 			/* Правила */
 			.b_midslide_box__btn{
-				position:relative;left:-15px;z-index:50;
+				position:absolute;top:60px;z-index:50;
 				background:#6dcff6;
-				margin-top:20px;
+				margin:330px 0 25px -193px;
 				padding:5px 15px;
 				font: 18px/24px 'pf_agora_slab_problack_italic', sans-serif;
 				color:#fff;text-decoration:none;
@@ -206,13 +220,13 @@ body{
 /* Нижний слайд
 
 */
-.b_botslide {position:relative;}
+.b_botslide {position:relative;overflow:hidden;}
 	.b_botslide_stand {
 		position:relative;
-		width:1280px;min-height:935px;
+		width:1280px;min-height:1476px;
 		margin:0 auto;
 		}
-		.b_botslide_stand_fon{position:relative;left:-150px;}
+		.b_botslide_stand_fon{position:relative;left:-180px;}
 		.b_botslide_stand__about{
 			position:absolute;top:152px;left:150px;
 			font: 36px/36px 'pf_agora_slab_problack_italic', sans-serif;
@@ -255,6 +269,7 @@ body{
 			padding-top:75px;
 			color:#fff;text-align:center;
 			text-decoration:none;
+			cursor:text !important;
 			}
 			.b_botslide_games__item:first-child{margin-left:0;}
 				
@@ -351,3 +366,60 @@ body{
 		.b_botslide_video__cpr{bottom:25px;color:#00aeef;}
 		
 /* /Нижний слайд */
+
+/* Всплывашка */
+#i_wnd_about{
+	position: fixed;left: 50%;top:55px;z-index: 9999;
+    width: 1024px;
+	background:#fff;
+    margin: 0 0 0 -512px;
+    
+	color: #000;
+    font: 200 12px/18px Verdana,serif !important;
+	
+    border: 3px solid #6fcff5;
+	box-shadow: 0 0 50px rgba(111,207,245,0.5);
+	}
+
+.i_wnd_about_brd a {color:#fff;font:400 12px Tahoma,sans-serif;}
+	.i_wnd_about_brd {
+		height:33px;
+		background:#fff;
+		padding:17px 0 0 22px;
+		}
+	.i_wnd_about_cntn__tit{
+		margin-bottom:30px;
+		color:#6dcff6;font: 30px/30px 'pf_agora_slab_problack_italic', sans-serif;
+	}
+	.i_wnd_about_cntn {padding:30px 50px 20px 50px;}
+	.i_wnd_about_cntn p {
+		margin-bottom:35px;
+		color:#1d1d1d;font: 21px/30px 'pf_agora_slab_proitalic', sans-serif;
+		text-align: left;
+		}
+	
+	.i_wnd_about_cls {
+		position:absolute;top:25px;right:25px;
+		width:24px;height:24px;
+		background: url(../images/wnd_about_cls.png);
+		
+		color:#fff;
+		font:400 30px Tahoma,sans-serif;
+		cursor:pointer;
+		}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

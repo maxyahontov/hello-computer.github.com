@@ -36,6 +36,37 @@ $(function(){
 	$('.b_bnn14').scrollingParallax({staticSpeed : 1.5,staticScrollLimit : false});
 	$('.b_bnn3').scrollingParallax({staticSpeed : 1.5,staticScrollLimit : false});
 	
+	/* Предварительная загрузка изображений
+	
+	*/
+	var cache = [];
+
+	$.extend({
+	preLoadImages: function()
+	{
+		var args_len = arguments.length;
+
+		for (var i = args_len; i--;)
+		{
+			var cacheImage = document.createElement('img');
+			cacheImage.src = arguments[i];
+			cache.push(cacheImage);
+		}
+	}
+	});
+
+	$.preLoadImages(
+		"images/hero/hero_pos1.png",
+		"images/hero/hero_pos2.png",
+		"images/hero/hero_pos3.png",
+		"images/hero/hero_pos4.png",
+		"images/hero/hero_pos5.png",
+		"images/hero/hero_pos6.png",
+		"images/hero/hero_pos7.png",
+		"images/hero/hero_pos8.png",
+		"images/hero/hero_pos9.png"
+	);
+	
 	/* Клик на Гоше
 	
 	*/
@@ -150,8 +181,8 @@ $(function(){
         else if(type == '#ok') {
             url = 'http://odnoklassniki.ru/dk?st.cmd=addShare&' + '&st._surl=' + site_url;
         }
-        else if(type == '#ml') {
-            url = 'http://connect.mail.ru/share?' + 'url=' + site_url + '&title=' + title + '&description=' + description + '&imageurl=' + image;
+        else if(type == '#tw') {
+            url = 'https://twitter.com/share?' + 'url=' + site_url + '&title=' + title + '&text=' + description;
         }
 
         var shareWindow = window.open(url,'displayWindow', 'width=700,height=600,left=200,top=100,location=no, directories=no,status=no,toolbar=no,menubar=no');

@@ -94,7 +94,7 @@ $(function(){
 
 		function init(){     
 			myMap = new ymaps.Map ("b_midslide_box__map", {
-				center: [55.781575, 37.994257],
+				center: [55.767890, 38.162426],
 				zoom: 10,
 			});
 
@@ -115,7 +115,7 @@ $(function(){
                     balloonContent: 'М.Калужская, Профсоюзная 61А (ТЦ «Калужский»)'
                 }, {
                     iconImageHref: 'images/yamap_ico.png', // картинка иконки
-                    iconImageSize: [44, 63], // размеры картинки
+                    iconImageSize: [30, 53], // размеры картинки
                 });
 
 			myMap.geoObjects.add(myPlacemark1);
@@ -124,16 +124,16 @@ $(function(){
                     balloonContent: 'М. Петровско-Разумовская, Дмитровское шоссе, 89 (ТЦ XL)'
                 }, {
                     iconImageHref: 'images/yamap_ico.png', // картинка иконки
-                    iconImageSize: [44, 63], // размеры картинки
+                    iconImageSize: [30, 53], // размеры картинки
                 });
 
 			myMap.geoObjects.add(myPlacemark2);
 			
 			myPlacemark3 = new ymaps.Placemark([55.808128, 37.510709], {
-                    balloonContent: 'М.Сокол, Ленинградский просп., 80, стр. 17'
+                    balloonContent: 'м. "Сходненская" ТЦ Калейдоскоп ул. Сходненская, д. 56'
                 }, {
                     iconImageHref: 'images/yamap_ico.png', // картинка иконки
-                    iconImageSize: [44, 63], // размеры картинки
+                    iconImageSize: [30, 53], // размеры картинки
                 });
 
 			myMap.geoObjects.add(myPlacemark3);
@@ -154,11 +154,26 @@ $(function(){
 	
 	/* Всплывашка правил
 	
-	*/
+	
+	$('.b_ask > a').fancybox({
+	'titleShow' : false,
+	'transitionIn' : 'none',
+	'transitionOut' : 'none',
+    padding:0,
+	fitToView:false,
+    beforeShow : function() {
+      $('.fancybox-overlay').addClass('form-overlay');
+    }
+	});*/
 	$(".popup_window").fancybox({
 		'titleShow'		: false,
 		'transitionIn'		: 'none',
-		'transitionOut'		: 'none'
+		'transitionOut'		: 'none',
+		fitToView:false,
+		padding:0,
+		beforeShow : function() {
+		  $('.fancybox-overlay').addClass('form-overlay');
+		}
 	});
 	$(".i_wnd_about_cls").click(function(){$.fancybox.close();});
 

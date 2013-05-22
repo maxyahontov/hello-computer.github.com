@@ -376,10 +376,9 @@ body *{-overflow:hidden;}
 
 /* Всплывашка */
 #i_wnd_about{
-	position: fixed;left: 50%;top:55px;z-index: 9999;
-    width: 1024px;
+	
+    width: 1018px;
 	background:#fff;
-    margin: 0 0 0 -512px;
     
 	color: #000;
     font: 200 12px/18px Verdana,serif !important;
@@ -387,6 +386,7 @@ body *{-overflow:hidden;}
     border: 3px solid #6fcff5;
 	box-shadow: 0 0 50px rgba(111,207,245,0.5);
 	}
+	.fancybox-inner{width:1024px !important;}
 
 .i_wnd_about_brd a {color:#fff;font:400 12px Tahoma,sans-serif;}
 	.i_wnd_about_brd {

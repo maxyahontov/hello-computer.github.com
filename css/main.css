@@ -75,9 +75,13 @@ body *{-overflow:hidden;}
 		position:relative;
 		width:1280px;height:1002px;
 		margin:0 auto;
-		background:url(../images/topslide_fon.png) no-repeat 100px 0;
+		background:url(../images/topslide_fon.png) no-repeat 50px 0;
 	}
 	.b_topslide_wrap > div{text-align:center;line-height:21px;}
+	
+	#olusha {
+		position:absolute;top:20px;left:419px;z-index:50;
+	}
 	
 	.b_topslide_logo{
 		position:absolute;top:30px;left:48px;

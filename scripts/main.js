@@ -205,6 +205,8 @@ $(function(){
 
         function checkChild() {
 		    if (shareWindow.closed) {
+				$('#topslide_click_point').fadeOut();
+				$('#olusha').fadeIn();
 		        $('#olusha')[0].play();
 		        clearInterval(timer);
 		    }
@@ -212,6 +214,8 @@ $(function(){
     }
 
     $('#olusha')[0].addEventListener('ended',function(){
+		$('#olusha').fadeOut();
+		$('#topslide_click_point').fadeIn();
     });
 
     $('.b_topslide_meet__socnet a').click(function(){

@@ -79,9 +79,7 @@ body *{-overflow:hidden;}
 	}
 	.b_topslide_wrap > div{text-align:center;line-height:21px;}
 	
-	#olusha {
-		position:absolute;top:20px;left:419px;z-index:50;
-	}
+	#olusha {position:absolute;top:20px;left:267px;z-index:50;}
 	
 	.b_topslide_logo{
 		position:absolute;top:30px;left:48px;

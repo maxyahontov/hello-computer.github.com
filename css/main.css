@@ -327,8 +327,8 @@ body *{-overflow:hidden;}
 			.b_botslide_video__tabs a.selected{border-top:6px solid #00aeef;padding-top:10px;}
 			.b_botslide_video__tabs a:first-child{margin-left:0;}
 			
-			.video__tabs1{width:85px;}
-			.video__tabs2{width:145px;}
+			.video__tabs1{width:145px;}
+			.video__tabs2{width:85px;}
 		
 		.b_botslide_video__togo {
 			position:relative;left:-262px;z-index:20;
